@@ -1,25 +1,41 @@
 source 'https://rubygems.org'
 
-gem 'backbone-on-rails'
-gem 'bcrypt'
-gem 'bootstrap-sass'
-gem 'coffee-rails', '~> 4.0.0'
-gem 'font-awesome-rails'
-gem 'jquery-rails'
-gem 'jquery-ui-rails'
-gem 'jbuilder', '~> 1.2'
-gem 'rails', '4.2.0'
-gem 'sass-rails', '~> 4.0.0'
-gem 'pg'
-gem 'uglifier', '>= 1.3.0'
+ruby "2.1.5"
 
-group :doc do
-  gem 'sdoc', require: false
+gem 'backbone-on-rails'
+gem 'rails', '4.2.0'
+gem 'sass-rails', '~> 5.0'
+gem 'uglifier', '>= 1.3.0'
+gem 'coffee-rails', '~> 4.1.0'
+# gem 'therubyracer', platforms: :ruby
+gem 'rails_12factor'
+gem 'jquery-rails'
+gem 'turbolinks'
+gem 'jbuilder', '~> 2.0'
+# bundle exec rake doc:rails generates the API under doc/api.
+gem 'sdoc', '~> 0.4.0', group: :doc
+
+gem 'bcrypt', '~> 3.1.7'
+
+# Use Unicorn as the app server
+# gem 'unicorn'
+
+# Use Capistrano for deployment
+# gem 'capistrano-rails', group: :development
+
+group :production do
+  gem 'pg'
 end
 
-group :development do
-  gem 'annotate'
+group :development, :test do
+  # Call 'byebug' anywhere in the code to stop execution and get a debugger console
+  gem 'byebug'
+  gem 'sqlite3'
+  # Access an IRB console on exception pages or by using <%= console %> in views
+  gem 'web-console', '~> 2.0'
   gem 'better_errors'
   gem 'binding_of_caller'
   gem 'pry-rails'
+  # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
+  gem 'spring'
 end
